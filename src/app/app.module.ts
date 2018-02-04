@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing.module';
+import {CoreModule} from './core/core.module';
 
 
 @NgModule({
@@ -10,7 +14,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+    CoreModule.forRoot({title: 'ExportByModule application configuration'},
+      {title: 'ExportByRoot application configuration'})
   ],
   providers: [],
   bootstrap: [AppComponent]
